@@ -1,7 +1,7 @@
 {
   "name": "dispatch-panel-pro",
   "productName": "CommsCenter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A dispatch panel for SonoranRadio and TeamSpeak, built for this community's roleplay dispatch operations.",
   "main": ".webpack/main",
   "repository": {
