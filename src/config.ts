@@ -1,6 +1,7 @@
 import Store from "electron-store";
 import locations from "./configs/locations.json";
 import postals from "./configs/postals.json";
+import channels from "./configs/channels.json";
 
 export const CONFIG_VERSION = "0.2.4";
 export const LOCATIONS_VERSION = "0.2.4";
@@ -125,13 +126,7 @@ export type IconConfig = {
 
 const configStore = new Store<ConfigSchemaType>({
   name: "config",
-  defaults: {
-    version: CONFIG_VERSION,
-    config: {
-      frequencies: [],
-      icons: [],
-    },
-  },
+  defaults: channels,
 });
 
 const locationsStore = new Store<LocationsSchemaType>({
