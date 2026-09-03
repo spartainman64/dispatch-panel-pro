@@ -161,10 +161,18 @@ const createEventLogWindow = (): BrowserWindow => {
     width: 800,
     minHeight: 200,
     minWidth: 400,
-    title: "Event Log",
+    title: "CommsCenter - Event Log",
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
+  });
+
+  // The page this window loads has its own <title>CommsCenter</title> tag
+  // (shared with the main window), which Electron would otherwise use to
+  // overwrite our distinct title once the page finishes loading - prevent
+  // that so recording/capture software can tell the two windows apart.
+  win.on("page-title-updated", (event) => {
+    event.preventDefault();
   });
 
   win.removeMenu();

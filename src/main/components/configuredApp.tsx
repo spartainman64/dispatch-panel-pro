@@ -27,7 +27,7 @@ const ConfiguredApp = () => {
   const [userGuideOpen, setUserGuideOpen] = React.useState(false);
 
   return (
-    <Box sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
+    <Box sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", overflowY: "auto", overflowX: "hidden" }}>
       <Box sx={{ flexShrink: 0 }}>
         <TopBar
           onOpenWebsocketSettings={() => setWebsocketSettingsOpen(true)}
@@ -43,12 +43,13 @@ const ConfiguredApp = () => {
       <Box
         sx={{
           flex: "1 1 55%",
-          minHeight: 0,
+          minHeight: { xs: 700, md: 0 },
+          flexShrink: 0,
           p: 1,
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "3fr 1fr" },
+          gridAutoRows: "1fr",
           gap: 1,
-          overflow: "hidden",
         }}
       >
         {settings.frequenciesSection && <ChannelGrid />}
@@ -58,13 +59,14 @@ const ConfiguredApp = () => {
       <Box
         sx={{
           flex: "1 1 45%",
-          minHeight: 0,
+          minHeight: { xs: 900, md: 0 },
+          flexShrink: 0,
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "1fr 1.5fr 1fr" },
+          gridAutoRows: "1fr",
           gap: 1,
           p: 1,
           pt: 0,
-          overflow: "hidden",
         }}
       >
         {settings.frequenciesSection && <ChannelDetail />}

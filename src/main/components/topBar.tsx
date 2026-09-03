@@ -417,27 +417,17 @@ const TopBar = (props: Props) => {
           py: 0.5,
           borderBottom: "1px solid",
           borderColor: "divider",
-          position: "relative",
-          display: "flex",
-          justifyContent: "space-between",
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
           alignItems: "center",
+          columnGap: 1,
         }}
       >
-        <Typography variant="caption" sx={{ fontWeight: "bold", letterSpacing: 0.5 }}>
+        <Typography variant="caption" sx={{ fontWeight: "bold", letterSpacing: 0.5, whiteSpace: "nowrap" }}>
           {onlineCount} UNIT{onlineCount === 1 ? "" : "S"} ONLINE
         </Typography>
 
-        <Stack
-          direction="row"
-          spacing={1}
-          alignItems="center"
-          sx={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
+        <Stack direction="row" spacing={1} alignItems="center" sx={{ justifySelf: "center" }}>
           <Tooltip title={soundMuted ? "Unmute alert tones" : "Mute alert tones"}>
             <IconButton
               size="small"
@@ -474,7 +464,14 @@ const TopBar = (props: Props) => {
           </Box>
         </Stack>
 
-        <Stack direction="row" spacing={2} alignItems="center">
+        <Stack
+          direction="row"
+          spacing={2}
+          alignItems="center"
+          flexWrap="wrap"
+          rowGap={1}
+          sx={{ justifySelf: "end", justifyContent: "flex-end" }}
+        >
           {channelButton("RTO", "#2563eb", "rto")}
 
           <Divider orientation="vertical" flexItem sx={{ borderColor: "divider" }} />
@@ -483,28 +480,28 @@ const TopBar = (props: Props) => {
             <Typography variant="caption" sx={{ color: "text.secondary", fontWeight: "bold", letterSpacing: 0.5 }}>
               LOS SANTOS
             </Typography>
-              <Stack direction="row" spacing={1}>
-                {channelButton("911", "#dc2626", "losSantos911")}
-                {channelButton("311", "#d97706", "losSantos311")}
-              </Stack>
+            <Stack direction="row" spacing={1}>
+              {channelButton("911", "#dc2626", "losSantos911")}
+              {channelButton("311", "#d97706", "losSantos311")}
             </Stack>
-
-            <Divider orientation="vertical" flexItem sx={{ borderColor: "divider" }} />
-
-            <Stack alignItems="center" spacing={0.5}>
-              <Typography variant="caption" sx={{ color: "text.secondary", fontWeight: "bold", letterSpacing: 0.5 }}>
-                BLAINE COUNTY
-              </Typography>
-              <Stack direction="row" spacing={1}>
-                {channelButton("911", "#dc2626", "blaineCounty911")}
-                {channelButton("311", "#d97706", "blaineCounty311")}
-              </Stack>
-            </Stack>
-
-            <Divider orientation="vertical" flexItem sx={{ borderColor: "divider" }} />
-
-            {channelButton("PRIORITY 911", "#b91c1c", "priority911")}
           </Stack>
+
+          <Divider orientation="vertical" flexItem sx={{ borderColor: "divider" }} />
+
+          <Stack alignItems="center" spacing={0.5}>
+            <Typography variant="caption" sx={{ color: "text.secondary", fontWeight: "bold", letterSpacing: 0.5 }}>
+              BLAINE COUNTY
+            </Typography>
+            <Stack direction="row" spacing={1}>
+              {channelButton("911", "#dc2626", "blaineCounty911")}
+              {channelButton("311", "#d97706", "blaineCounty311")}
+            </Stack>
+          </Stack>
+
+          <Divider orientation="vertical" flexItem sx={{ borderColor: "divider" }} />
+
+          {channelButton("PRIORITY 911", "#b91c1c", "priority911")}
+        </Stack>
       </Box>
     </Box>
   );
