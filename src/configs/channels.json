@@ -1,0 +1,118 @@
+{
+  "config": {
+    "frequencies": [
+      {
+        "name": "Statewide Dispatch",
+        "xmit": [150, 0],
+        "recv": [30, 0],
+        "category": "POLICE"
+      },
+      {
+        "name": "Los Santos Dispatch",
+        "xmit": [150, 500],
+        "recv": [30, 500],
+        "category": "POLICE"
+      },
+      {
+        "name": "Blaine County Dispatch",
+        "xmit": [150, 250],
+        "recv": [30, 250],
+        "category": "POLICE"
+      },
+      {
+        "name": "Tac 1",
+        "xmit": [150, 750],
+        "recv": [30, 750],
+        "category": "TACTICAL"
+      },
+      {
+        "name": "Tac 2",
+        "xmit": [151, 0],
+        "recv": [31, 0],
+        "category": "TACTICAL"
+      },
+      {
+        "name": "Car-Car Alpha",
+        "xmit": [151, 250],
+        "recv": [31, 250],
+        "category": "INTEROP"
+      },
+      {
+        "name": "Car-Car Bravo",
+        "xmit": [31, 500],
+        "recv": [31, 500],
+        "category": "INTEROP"
+      },
+      {
+        "name": "Fire Dispatch",
+        "xmit": [151, 500],
+        "recv": [31, 750],
+        "category": "FIRE/EMS"
+      },
+      {
+        "name": "Fire Tac 1",
+        "xmit": [151, 750],
+        "recv": [32, 0],
+        "category": "FIRE/EMS"
+      },
+      {
+        "name": "Fire Tac 2",
+        "xmit": [152, 0],
+        "recv": [32, 250],
+        "category": "FIRE/EMS"
+      },
+      {
+        "name": "Fire Tac 3",
+        "xmit": [152, 250],
+        "recv": [32, 500],
+        "category": "FIRE/EMS"
+      },
+      {
+        "name": "CHC Towing",
+        "xmit": [152, 500],
+        "recv": [32, 750],
+        "category": "SERVICE"
+      },
+      {
+        "name": "Dept of Corrections",
+        "xmit": [152, 750],
+        "recv": [33, 0]
+      }
+    ],
+    "icons": [
+      {
+        "match": " C-",
+        "department": "Communications"
+      },
+      {
+        "match": " Z-",
+        "department": "Communications"
+      },
+      {
+        "match": " F-",
+        "department": "Fire"
+      },
+      {
+        "match": " FI-",
+        "department": "Fire"
+      },
+      {
+        "match": " FM-",
+        "department": "Fire"
+      },
+      {
+        "match": "2.-",
+        "department": "LSPD"
+      },
+      {
+        "match": "3.-",
+        "department": "BCSO"
+      },
+      {
+        "match": "5.-",
+        "department": "SAHP"
+      }
+    ]
+  },
+  "version": "0.2.4"
+}
